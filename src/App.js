@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Nav from './Components/Nav'
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import About from './Components/About';
+import Featured from './Components/Featured'
+import Geners from './Components/Geners'
+import Movies from './Components/Movies';
+import Dubbed from './Components/Dubbed'
+import Hindi from './Components/Hindi'
+import TvSeries from './Components/TvSeries'
+import Request from './Components/Request';
+import Footer from './Components/Footer';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<Router>
+<Nav/>
+ <Switch>
+ <Route path='/movies' component={Movies}></Route>
+  <Route path='/about' component={About}></Route>
+  <Route path='/featured' component={Featured}></Route>
+  <Route path='/geners' component={Geners}></Route>
+  <Route path='/hindi' component={Hindi}></Route>
+  <Route path='/dubbed' component={Dubbed}></Route>
+  <Route path='/tvseries' component={TvSeries}></Route>
+  <Route path='/request' component={Request}></Route>
+ </Switch> 
+ <Footer/>
+</Router>  
+    
   );
 }
 
