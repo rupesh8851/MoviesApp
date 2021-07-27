@@ -13,7 +13,7 @@ function Nav() {
                     <div className="navbar-nav">
                         <Link className='nav-item nav-link active' to='/movies'>Movies</Link>
                         <Link className='nav-item nav-link active' to='/featured'>Featured</Link>                         
-                        <Link className='nav-item nav-link active' to='/tvseries'>Tv Series</Link>
+                        <Link className='nav-item nav-link active' to='/tvseries'>T Series</Link>
                         <Link className='nav-item nav-link active' to='/hindi'>Hindi</Link>
                         <Link className='nav-item nav-link active' to='/dubbed'>Dubbed</Link>
                         <Link className='nav-item nav-link active' to='/geners'>Geners</Link>

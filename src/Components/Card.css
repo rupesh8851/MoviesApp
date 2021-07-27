@@ -200,6 +200,10 @@
 	 display: block;
 }
 /* Columns match, minus margin sum. E.G. margin-left+margin-right=1%, col2=50%-1% - added padding:1%*/
+.heading{
+	
+}
+
  .col1 {
 	 width: 98%;
    z-index: 2;

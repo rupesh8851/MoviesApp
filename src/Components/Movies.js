@@ -1,17 +1,32 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import  './Card.css';
+import './Pagination.css'
+
 function Movies() {
  
      let[movie,setMovie]=useState([]);
+     const [count,setCount]=useState(1);
+
+    const arr=[];
+    for(let i=0;i<7;i++)
+    {
+        arr[i]=count+i;
+    }
+
+    const handleCount=(idx)=>{
+        
+        if(idx>=0)
+         setCount(idx);
+    }
 
      useEffect(()=>{
-
-        axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=96ff490d96665070a2efca4f59402be6&language=en-US&page=1")
+     
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=96ff490d96665070a2efca4f59402be6&language=hi-US&page=${count}`)
         .then(({data})=>{
             setMovie(data.results);
         })
-     },[])
+     },[count])
 
     return (        
         <>
@@ -33,7 +48,7 @@ function Movies() {
                               <div class="text-movie-cont">
                                 <div class="mr-grid">
                                   <div class="col1">
-                                    <h1>{obj.title}</h1>
+                                    <h1 class="heading" >{obj.title}</h1>
                                     <ul class="movie-gen">
                                       <li>PG-13  /</li>
                                       <li>2h 49min  /</li>
@@ -54,7 +69,7 @@ function Movies() {
                                 </div>
                                 <div class="mr-grid">
                                   <div class="col1">
-                                    <p class="movie-description">{obj.overview.substring(0,200)}</p>
+                                    <p class="movie-description">{obj.overview}</p>
                                   </div>
                                 </div>
                                 <div class="mr-grid actors-row">
@@ -62,7 +77,7 @@ function Movies() {
                                     <p class="movie-actors">Matthew McConaughey, Anne Hathaway, Jessica Chastain</p>
                                   </div>
                                 </div>
-                                <div class="mr-grid action-row">
+                                {/* <div class="mr-grid action-row">
                                   <div class="col2"><div class="watch-btn"><h3><i class="material-icons">&#xE037;</i>WATCH TRAILER</h3></div>
                                   </div>
                                   <div class="col6 action-btn"><i class="material-icons">&#xE161;</i>
@@ -71,7 +86,7 @@ function Movies() {
                                   </div>
                                   <div class="col6 action-btn"><i class="material-icons">&#xE80D;</i>
                                   </div>
-                                </div>
+                                </div> */}
                               </div>
                             </div>
                         </div>
@@ -79,6 +94,18 @@ function Movies() {
                       
                            ); })
                            }
+                           <div class="page">
+                             <ul class="pagi" >
+                            <li class="page-item" onClick={()=>{handleCount(count-1)}}> Previous </li>
+  
+                                {
+                                    arr.map((idx)=>{
+                                      return <li class="page-item "  onClick={()=>{handleCount(idx)}}>{idx}</li>
+                                    })
+                                }
+                          <li  class="page-item"  onClick={()=>{handleCount(count+1)}}>Next</li>
+                            </ul>
+                          </div>
 
                         </div> 
                 

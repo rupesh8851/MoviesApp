@@ -15,7 +15,7 @@ function App() {
 <Router>
 <Nav/>
  <Switch>
- <Route path='/movies' component={Movies}></Route>
+  <Route path='/movies' component={Movies}></Route>
   <Route path='/about' component={About}></Route>
   <Route path='/featured' component={Featured}></Route>
   <Route path='/geners' component={Geners}></Route>
@@ -24,6 +24,7 @@ function App() {
   <Route path='/tvseries' component={TvSeries}></Route>
   <Route path='/request' component={Request}></Route>
  </Switch> 
+ 
  <Footer/>
 </Router>  
     
