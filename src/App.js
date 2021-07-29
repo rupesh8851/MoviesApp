@@ -10,9 +10,12 @@ import Hindi from './Components/Hindi'
 import TvSeries from './Components/TvSeries'
 import Request from './Components/Request';
 import Footer from './Components/Footer';
+
+import UploadFile from './UploadFile';
 function App() {
   return (
-<Router>
+
+  <Router>
 <Nav/>
  <Switch>
   <Route path='/movies' component={Movies}></Route>
@@ -24,11 +27,12 @@ function App() {
   <Route path='/tvseries' component={TvSeries}></Route>
   <Route path='/request' component={Request}></Route>
  </Switch> 
- 
  <Footer/>
-</Router>  
-    
+</Router>   
+
+
   );
+
 }
 
 export default App;

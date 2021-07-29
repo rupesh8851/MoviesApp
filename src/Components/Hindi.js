@@ -1,9 +1,10 @@
 import React from 'react'
+import UploadFile from '../UploadFile'
 
 function Hindi() {
     return (
         <div>
-            here is Hindi 
+            <UploadFile/>
         </div>
     )
 }

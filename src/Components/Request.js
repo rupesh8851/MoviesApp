@@ -43,7 +43,7 @@ function Request() {
 
     return (
         <div>
-            <div style={{height:100}} variant="outlined" color="primary" onClick={handleClickOpen}>
+            <div style={{height:100}} variant="outlined" color="grey" onClick={handleClickOpen}>
          Open full-screen dialog
           </div>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
