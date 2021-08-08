@@ -35,12 +35,13 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 function Featured() {
-    let[movie,setMovie]=useState([]);
+     let [movie,setMovie]=useState([]);
      const [count,setCount]=useState(1);
      const classes = useStyles();
      const [opens, setOpen] =useState(false);
-      const [par,setpar]=useState([]);
-      const [curr,setCurr]=useState(0);
+     const [par,setpar]=useState([]);
+     const [curr,setCurr]=useState(0);
+      
      useEffect(()=>{
       database.posts.onSnapshot(querySnapshot=>{
         let arr=[];
@@ -87,9 +88,6 @@ function Featured() {
         .then(({data})=>{
             setMovie(data.results);
         })
-        
-       
-
        
      },[count])
 
@@ -197,6 +195,7 @@ function Featured() {
                                       return <li class="page-item "  onClick={()=>{handleCount(idx)}}>{idx}</li>
                                     })
                                 }
+                                
                           <li  class="page-item"  onClick={()=>{handleCount(count+1)}}>Next</li>
                             </ul>
                           </div>
