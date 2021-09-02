@@ -1,78 +1,138 @@
-import React from 'react'
+import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Avatar from '@material-ui/core/Avatar';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import CloseIcon from '@material-ui/icons/Close';
-import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles((theme) => ({
-  appBar: {
-    position: 'relative',
+  req: {
+    flexGrow: 1,
+    overflow: 'hidden',
+    padding: theme.spacing(0, 3),
+    height:'40vh',
+    width:'40vw',
+    marginLeft:'0px'
+  },
+  paper: {
+    maxWidth: 400,
+    backgroundColor:'grey',
+    margin: `${theme.spacing(1)}px auto`,
+    padding: theme.spacing(2),
+  }, root: {
+    minWidth: 275,
+  },
+  card:{
+    marginTop:'5rem',
+    backgroundColor: '#404040',
+    width: '60vw',
+  }
+  ,
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
   },
   title: {
-    marginLeft: theme.spacing(2),
-    flex: 1,
+    fontSize: 20,
+    fontFamily: 'impact',
+    borderBottom:'solid 1px grey',
+    color:'white'
   },
+  pos: {
+    marginBottom: 12,
+    color:'white',
+    fontSize:14,
+  },
+ 
+
+
 }));
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+const message = `Truncation should be conditionally applicable on this long line of text
+ as this is a much longer line than what the container can support. `;
+
 function Request() {
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
-  
-    const handleClickOpen = () => {
-      setOpen(true);
-      console.log("open");
-    };
-  
-    const handleClose = () => {
-        console.log("close")
-      setOpen(false);
-    };
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
+  return (
+    <div>
 
+<Card className={classes.card}>
+      <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+         Request a Movie
+        </Typography>
 
-    return (
-        <div>
-            <div style={{height:100}} variant="outlined" color="grey" onClick={handleClickOpen}>
-         Open full-screen dialog
-          </div>
-      <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-        <AppBar className={classes.appBar}>
-          <Toolbar>
-            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-              <CloseIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              Sound
-            </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              save
-            </Button>
-          </Toolbar>
-        </AppBar>
-        <List>
-          <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItem>
-          <Divider />
-          <ListItem button>
-            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
-          </ListItem>
-        </List>
-      </Dialog>
+        <Typography variant="h5" component="h2">
+        Hello everyone, if a movie or tv-series is not available on uwatchfree you can request it here, we will try to add it as soon as possible.
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+        
+        </Typography>
+        <Typography className={classes.pos} style={{color:'blue'}} color="textSecondary">
+        Please search the site before making a request.
+        <div> </div>
+        Don’t ask for HD print of a movie, your comment will be ultimately ignored.
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+        Please search the site before making a request.
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+        Movie name:
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">    
+        Movie releasing year:
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+        Add your Requests in the comment box below, we will try to add it if possible.
+        <div></div>
+        Good Luck.
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">    
+       
+        </Typography>
+      </CardContent>
+     
+    </Card>
+    <div className={classes.req}>
+      <Paper className={classes.paper}>
+        <Grid container wrap="nowrap" spacing={2} className={classes.grid}>
+          <Grid item>
+            <Avatar>W</Avatar>
+          </Grid>
+          <Grid item xs zeroMinWidth>
+            <Typography >can u pls add ALICE IN WONDERLAND IN TAMIL AND ALICE THROUGH THE LOOKING GLASS IN TAMIL AND OTHER SUCH CARTOON MOVIE IN TAMIL 🙏🙏🙏🙏🙏🙏</Typography>
+          </Grid>
+        </Grid>
+      </Paper>
+      <Paper className={classes.paper}>
+        <Grid container wrap="nowrap" spacing={2}>
+          <Grid item>
+            <Avatar>R</Avatar>
+          </Grid>
+          <Grid item xs>
+            <Typography >Please add Best of luck laalu in gujarati genre it’s not available anywhere in web and old movie yet demanding</Typography>
+          </Grid>
+        </Grid>
+      </Paper>
+      <Paper className={classes.paper}>
+        <Grid container wrap="nowrap" spacing={2}>
+          <Grid item>
+            <Avatar>P</Avatar>
+          </Grid>
+          <Grid item xs>
+            <Typography>I want to watch the movie “Ranchi Diaries” it is released in 2017 plz try to upload it plz 🙏</Typography>
+          </Grid>
+        </Grid>
+      </Paper>
     </div>
-    
-    )
+    </div>
+  );
 }
 
 export default Request

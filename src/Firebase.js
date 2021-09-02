@@ -5,12 +5,12 @@ import 'firebase/firestore'
 
 firebase.initializeApp(
     {
-        apiKey: "AIzaSyAKlLIufUjF3RW-bPKaf3sHhFqNK5GVUN0",
-        authDomain: "fir-b2183.firebaseapp.com",
-        projectId: "fir-b2183",
-        storageBucket: "fir-b2183.appspot.com",
-        messagingSenderId: "263511883399",
-        appId: "1:263511883399:web:b9d8b88b06ebaf97d00222"
+        apiKey: "AIzaSyD990jNK2VPvB1FURCy9gWFFO4KAUA6k84",
+        authDomain: "fir-1b399.firebaseapp.com",
+        projectId: "fir-1b399",
+        storageBucket: "fir-1b399.appspot.com",
+        messagingSenderId: "455202713801",
+        appId: "1:455202713801:web:c980eaf45c8c76c2fd9d18"
       }
 )
 

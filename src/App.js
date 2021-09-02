@@ -10,14 +10,16 @@ import Hindi from './Components/Hindi'
 import TvSeries from './Components/TvSeries'
 import Request from './Components/Request';
 import Footer from './Components/Footer';
-
+import Nav1 from './Components/Nav1'
 import UploadFile from './UploadFile';
+
 function App() {
   return (
 
   <Router>
-<Nav/>
+<Nav1/>
  <Switch>
+   <Route path='/MoviesApp' component={Movies}></Route>
   <Route path='/movies' component={Movies}></Route>
   <Route path='/about' component={About}></Route>
   <Route path='/featured' component={Featured}></Route>

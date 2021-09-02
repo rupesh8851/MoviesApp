@@ -7,6 +7,10 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import {storage,database} from './Firebase'
 
 const useStyles = makeStyles((theme) => ({
+    button:{
+        backgroundColor:'black',
+        fontSize:'20px'
+    }
     
   }));
   
@@ -94,9 +98,10 @@ function UploadFile() {
             style={{display:'none'}}
             />
             <label htmlFor='icon-button-file'>
-            <Button disabled={loading} variant="outlined" component='span' className={classes.button} 
-            size='medium' color="secondary">
-                Secondary
+
+            <Button disabled={loading} variant='outlined' component='span' className={classes.button} 
+             color="primary" >
+                UPLOAD Movie
             </Button>
 
             </label>

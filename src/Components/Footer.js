@@ -2,8 +2,13 @@ import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 
+
 const Footer = () => {
+
+
   return (
+     <div style={{display:"flex" , flexDirection:"column"}}>
+       <div style={{height:"5vh" ,width:'100vw' }}></div>
     <MDBFooter color="cyan"  className="font-small darken-3 pt-0 footer">
       <MDBContainer>
         <MDBRow>
@@ -43,6 +48,7 @@ const Footer = () => {
         </MDBContainer>
       </div>
     </MDBFooter>
+    </div>
   );
 }
 

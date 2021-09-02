@@ -3,7 +3,6 @@ import ContainedButtons from './Select_genres'
 import LatestMovies from './LatestMovies'
 
 
-
 function Geners() {
     return (
         <div>

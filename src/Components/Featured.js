@@ -98,7 +98,7 @@ function Featured() {
           {
                movie.length==0? 
                <div>"loding... "</div>:
-                    
+                    <>
                     <div class="card_container" >
 
                        { movie.map((obj,index)=>{
@@ -167,10 +167,10 @@ function Featured() {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Sound
+              TRAILER
             </Typography>
             <Button autoFocus color="inherit" onClick={handleClose}>
-              save
+              Download
             </Button>
           </Toolbar>
         </AppBar>
@@ -186,21 +186,22 @@ function Featured() {
 
                            ); })
                            }
-                           <div class="page">
-                             <ul class="pagi" >
-                            <li class="page-item" onClick={()=>{handleCount(count-1)}}> Previous </li>
+                           </div>
+                             <div class="page " style={{height:'7rem' ,width:'80vw' ,marginLeft:'10vw',marginRight:'10vw'} } >
+                             <ul class="pagi" style={{display:'flex',height:"100%",border:'solid 1px'}} >
+                            <div class="page-item" style={{height:'100%',paddingTop:'7px',border:'solid 1px black',alignContent:'center',justifyContent:"center",display:"flex" ,width:'100%' ,color:'white' , fontSize:'3rem'}} onClick={()=>{handleCount(count-1)}}> Previous </div>
   
                                 {
                                     arr.map((idx)=>{
-                                      return <li class="page-item "  onClick={()=>{handleCount(idx)}}>{idx}</li>
+                                      return <div class="page-item" style={{height:'100%',paddingTop:'7px',border:'solid 1px black',alignContent:'center',justifyContent:"center",display:"flex" ,width:'100%' ,color:'white' , fontSize:'3rem'}} onClick={()=>{handleCount(count-1)}} onClick={()=>{handleCount(idx)}}>{idx}</div>
                                     })
                                 }
                                 
-                          <li  class="page-item"  onClick={()=>{handleCount(count+1)}}>Next</li>
+                          <div  class="page-item" style={{height:'100%',paddingTop:'7px',border:'solid 1px black',alignContent:'center',justifyContent:"center",display:"flex" ,width:'100%' ,color:'white' , fontSize:'3rem'}} onClick={()=>{handleCount(count-1)}} onClick={()=>{handleCount(count+1)}}>Next</div>
                             </ul>
                           </div>
 
-                        </div> 
+                        </> 
                 
 
           }
