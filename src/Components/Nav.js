@@ -7,7 +7,7 @@ function Nav() {
 
             
             <nav className="navbar navbar-expand-lg navbar-dark ">
-                <div className="navbar-brand"  style={{ color: 'darkcyan' ,paddingLeft:'15px', fontSize:'20' }} >CornFlix</div> 
+                <div className="navbar-brand"  style={{ color: 'darkcyan' ,paddingLeft:'15px', fontSize:'20' }} >Cornflix</div> 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

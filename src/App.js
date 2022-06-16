@@ -17,7 +17,7 @@ function App() {
   return (
 
   <Router>
-<Nav1/>
+<Nav/>
  <Switch>
    <Route path='/MoviesApp' component={Movies}></Route>
   <Route path='/movies' component={Movies}></Route>

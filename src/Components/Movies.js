@@ -39,7 +39,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 function Movies() {
  
-     let [movie,setMovie]=useState([]);
+     const [movie,setMovie]=useState([]);
      const [count,setCount]=useState(1);
      const classes = useStyles();
      const [opens, setOpen] =useState(false);
@@ -93,8 +93,7 @@ function Movies() {
             setMovie(data.results);
         })
 
-      
-       
+
      },[count])
 
 

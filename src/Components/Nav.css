@@ -44,7 +44,8 @@
     height:30px;
     background-color: black;
     font-size: 10px;
-    display: flex;
+    display:flex;
+    justify-content: space-between;
     justify-content: center;
     align-items: center;
     -moz-border-radius: 15px;
